@@ -1,31 +1,64 @@
 <html>
 	<head>
-		<h1>Hello World!</h1>
+		<script>
+		function fakeFormSubmit (){
+			// Assigning the value to a variable to make it more clean to read,
+			// This function will just look for the hidden value ID and get its value.
+			var hValue;
+			hValue = document.getElementById("hiddenValue").value;
+			alert("The value of the hidden field is = " + hValue)
+		}
+		</script>
+		<style>
+		/*CSS External style to redefine the tags input(with the type button) and the table*/
+		input[type=button] {
+			border-color: pink;
+			background-color: white;
+			border-radius: 10px;
+			font-family: monospace;
+		}
+		table{
+	   		table-layout: fixed; 
+	   		font-family: monospace;	
+		}
+		/*Create classes to control the style with more specifity*/
+		.button-row {
+			text-align: end;
+		}	
+		.form-div{
+			
+		}
+		</style>
 	</head>
 	<body>
-		<form action="" method="POST" name="credentials">
-		<input type="hidden" value="marcel" name="marcel">
-			<table>
-				<tr>
-					<td>
-						User ID:
-					</td>
-					<td>
-						<input type="text" name="userId">
-					</td>
-				</tr>
-				<tr>
-					<td> 
-						Password:
-					</td>
-					<td>
-						<input type="text" name="password">
-					</td>
-				</tr>
-			</table>
-			<input type="submit" value="Submit">
-			<button onclick="javascript:alert('There\'s no Help!');"> Help </button>
-		</form>
-			
+		<div class="form-div">
+			<form action="" method="POST" name="credentials">
+				<table>
+					<tr>
+						<td>
+							User ID:
+						</td>
+						<td>
+							<input type="text" name="userId">
+						</td>
+					</tr>
+					<tr>
+						<td> 
+							Password:
+						</td>
+						<td>
+							<input type="text" name="password">
+							<input id="hiddenValue" type="hidden" value="marcel" name="marcel">
+						</td>
+					</tr>
+					<tr>
+						<td class= "button-row" colspan="2">
+							<input  onclick="fakeFormSubmit();" type="button" value="Submit">
+							<input  type="button" onclick="javascript:alert('There\'s no Help!');" value="Help">
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>	
 	</body>
 </html>
