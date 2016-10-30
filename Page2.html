@@ -1,7 +1,13 @@
 <html>
 	<head>
 	<script>
-	
+	//Function to get the value of the text field
+	function textField(){
+		var _textField = document.getElementById('userText').value;
+		alert("You typed: "+ _textField);
+	}
+
+	//Function to get the selected radio button
 	function radioNames(){
 		//variable to handle the radio buttons
 		var _radioNames = document.getElementsByName('rnames');
@@ -14,17 +20,25 @@
 		    }
 		}
 	}
+	//Function to display the list selected from the checkbox
 	function checkNames(){
 		//variable to handle the checkbox
 		var _checkNames = document.getElementsByName('cnames');
 		var checkedNames='';
-		//T
+		//itterating over the checkbox list collecting the checked values
 		for (var i = 0, length = _checkNames.length; i < length; i++) {
-		    if (_checkNames[i].checked) {
-		       	checkedNames += _checkNames.value
+		    if (_checkNames[i].checked && _checkNames=='') {
+		       	checkedNames += _checkNames[i].value
+		    }else if(_checkNames[i].checked){
+		    	checkedNames += "\n"+_checkNames[i].value
 		    }
 		}
-		alert(" CHECKBOX - Last name of the selected: "+ checkedNames)
+		alert(" CHECKBOX - Full name of the selected are: "+ checkedNames)
+	}
+	function numberSelected(){
+		var _number = document.getElementById("yorkNumber");
+		var selectedNumber = "Value: "+_number.options[_number.selectedIndex].value +"\nText: "+ _number.options[_number.selectedIndex].text;
+		alert(selectedNumber);
 	}
 	</script>
 	<style>
@@ -57,17 +71,17 @@
 				Everest Montain
 				</td>
 				<td> 
-						<input onclick="radioNames()" type="radio" name="rnames" value="Everest"> Sir George<br>
-						<input onclick="radioNames()" type="radio" name="rnames" value="Waugh"> Sir Andrew<br>
-						<input onclick="radioNames()" type="radio" name="rnames" value="Hillary"> Edmund<br>
-						<input onclick="radioNames()" type="radio" name="rnames" value="Leszek"> Tenzing<br>
+						<input onclick="radioNames()" type="radio" name="rnames" value="Sir George Everest"> Sir George<br>
+						<input onclick="radioNames()" type="radio" name="rnames" value="Sir Andrew Waugh"> Sir Andrew<br>
+						<input onclick="radioNames()" type="radio" name="rnames" value="Edmund Hillary"> Edmund<br>
+						<input onclick="radioNames()" type="radio" name="rnames" value="Tenzing Leszek"> Tenzing<br>
 				</td>
 				<td> 
 					<div id="checkNames">
-						<input type="checkbox" name="cnames" value="Sherpa"> Apa<br>
-						<input type="checkbox" name="cnames" value="Tashi"> Phurba<br>
-						<input type="checkbox" name="cnames" value="Hahn"> Dave<br>
-						<input type="checkbox" name="cnames" value="Benegas"> Guillermo<br>
+						<input onclick="checkNames()" type="checkbox" name="cnames" value="Apa Sherpa"> Apa<br>
+						<input onclick="checkNames()" type="checkbox" name="cnames" value="Phurba Tashi"> Phurba<br>
+						<input onclick="checkNames()" type="checkbox" name="cnames" value="Dave Hahn"> Dave<br>
+						<input onclick="checkNames()" type="checkbox" name="cnames" value="Guillermo Benegas"> Guillermo<br>
 					</div>
 				</td>
 				<td><i>"I'll be right back 
@@ -89,7 +103,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td><textarea></textarea></td>
+				<td><textarea id="userText" onchange="textField()"></textarea></td>
 				<td>
 					<form> 
 						Last Name: <input value="Matsuoka"> </br>
@@ -101,7 +115,7 @@
 			</tr>
 			<tr>
 				<td>
-					<select>
+					<select id="yorkNumber" onchange="numberSelected()">
 						<option value="2">Two</option>
 						<option value="1">One</option>
 						<option value="4">Four</option>
