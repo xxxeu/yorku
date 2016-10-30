@@ -9,29 +9,10 @@
 			alert("The value of the hidden field is = " + hValue)
 		}
 		</script>
-		<style>
-		/*CSS External style to redefine the tags input(with the type button) and the table*/
-		input[type=button] {
-			border-color: pink;
-			background-color: white;
-			border-radius: 10px;
-			font-family: monospace;
-		}
-		table{
-	   		table-layout: fixed; 
-	   		font-family: monospace;	
-		}
-		/*Create classes to control the style with more specifity*/
-		.button-row {
-			text-align: end;
-		}	
-		.form-div{
-			
-		}
-		</style>
+	<link rel="stylesheet" type="text/css" href="login.css">	
 	</head>
 	<body>
-		<div class="form-div">
+		<div class="div-form">
 			<form action="" method="POST" name="credentials">
 				<table>
 					<tr>
@@ -47,7 +28,7 @@
 							Password:
 						</td>
 						<td>
-							<input type="text" name="password">
+							<input type="password" name="password">
 							<input id="hiddenValue" type="hidden" value="marcel" name="marcel">
 						</td>
 					</tr>

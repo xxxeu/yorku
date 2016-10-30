@@ -1,0 +1,22 @@
+/*CSS External style to redefine the tags input(with the type button) and the table*/
+input[type=button] {
+	border-color: #FFE1E6;
+	background-color: white;
+	border-radius: 10px;
+	font-family: monospace;
+}
+table{
+		table-layout: fixed; 
+		font-family: monospace;	
+}
+/*Create classes to control the style with more specifity*/
+.button-row {
+	text-align: end;
+}	
+.div-form{          
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;     
+	margin-left: -150px;
+}
