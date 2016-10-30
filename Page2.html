@@ -35,40 +35,29 @@
 		}
 		alert(" CHECKBOX - Full name of the selected are: "+ checkedNames)
 	}
+	//Function to display the selected number from the drop down list. Note that it should display both value and text
 	function numberSelected(){
 		var _number = document.getElementById("yorkNumber");
+		//Selecting the vale and the text using the options that the dropdown have and the index selected
 		var selectedNumber = "Value: "+_number.options[_number.selectedIndex].value +"\nText: "+ _number.options[_number.selectedIndex].text;
 		alert(selectedNumber);
 	}
+
+	function simulateSubmit(){
+			// Assigning the value to a variable to make it more clean to read,
+			// This function will just look for the hidden value ID and get its value.
+			var hValue;
+			hValue = document.getElementById("hiddenValue").value;
+			alert("The value of the hidden field is = " + hValue)
+		}
 	</script>
-	<style>
-		table{
-    		border: 1px solid black;
-    		text-align: center; 
-    		}
-
-		tr{
-    		height: 100px !important;
-			border: 1px solid black;
-		}
-		td{
-			width: 100px !important;
-			border: 1px solid black;
-		}
-		.invisible-table{
-			border: 0px;
-		}
-		.short-description{
-			font-size:60%;
-		}
-
-	</style>
+	<link rel="stylesheet" type="text/css" href="page2.css">	
 	</head>
 	<body>
 		<table>
 			<tr rowspan="2">
 				<td colspan="2"> <img src="montain.jpg"> </br>
-				Everest Montain
+				<subtitle>Everest Montain<subtitle>
 				</td>
 				<td> 
 						<input onclick="radioNames()" type="radio" name="rnames" value="Sir George Everest"> Sir George<br>
@@ -103,11 +92,12 @@
 				</td>
 			</tr>
 			<tr>
-				<td><textarea id="userText" onchange="textField()"></textarea></td>
+				<td><h4>Text Box:</h4><textarea id="userText" onchange="textField()"></textarea></td>
 				<td>
 					<form> 
 						Last Name: <input value="Matsuoka"> </br>
 						First Name:<input value="Marcel">
+						<input id="hiddenValue" type="hidden" value="2145marcel" name="marcel">
 					</form>
 				</td>
 				<td colspan="2"> <img src="kathmandu.jpg"> </td>
@@ -122,12 +112,15 @@
 						<option value="5">Five</option>
 					</select>
 				</td>
-				<td> <b>Book Title</b> <br> The Climb: Tragic Ambitions on Everest. </td>
+				<td> <h4>Book Title</h4> The Climb: Tragic Ambitions on Everest. </td>
 				<td colspan="2"> <img src="village.jpg" ></td>
-			</tr>
+			</tr>	
 		</table>
 		<table class="invisible-table">
 			<tr>
+				<td><button onclick="simulateSubmit()">Button1</button></td>
+				<td><button>Button2</button></td>
+				<td><button>Button3</button></td>
 			</tr>
 		</table>
 	</body>

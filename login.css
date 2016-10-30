@@ -1,13 +1,16 @@
 /*CSS External style to redefine the tags input(with the type button) and the table*/
+body{
+	font-family: monospace;	
+}
 input[type=button] {
 	border-color: #FFE1E6;
 	background-color: white;
 	border-radius: 10px;
-	font-family: monospace;
+	font-family: monospace;	
 }
 table{
 		table-layout: fixed; 
-		font-family: monospace;	
+		
 }
 /*Create classes to control the style with more specifity*/
 .button-row {
